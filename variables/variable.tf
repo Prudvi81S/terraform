@@ -1,3 +1,8 @@
+# 1. command line
+# 2. terraform.tfvars
+# 3. environment variables, TF_VAR_your_variable_name
+# 4. default
+# 5. prompt
 variable "ami_id" {
   type        = string
   default     = "ami-09c813fb71547fc4f"
@@ -6,16 +11,12 @@ variable "ami_id" {
 
 variable "instance_type" {
     type = string
-    default = "t3.micro"
-}
-
-variable "sg_ids" {
-
+    #default = "t3.micro"
 }
 
 variable "tags" {
-    type        = map
-    default     = {
+    type = map #optional
+    default = {
         Name = "backend"
         Project = "expense"
         Component = "backend"
@@ -46,7 +47,7 @@ variable "protocol" {
     default = "tcp"
 }
 
-variable "ingress-cidr" {
+variable "ingress_cidr" {
     type = list(string)
     default = ["0.0.0.0/0"]
 }
