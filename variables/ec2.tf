@@ -23,7 +23,7 @@ resource "aws_security_group" "allow_ssh_terraform" {
         from_port        = var.from_port
         to_port          = var.to_port
         protocol         = var.protocol
-        cidr_blocks      = var.ingress_cidr
+        cidr_blocks      = var.ingress-cidr
         ipv6_cidr_blocks = ["::/0"]
     }
 
